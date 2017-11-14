@@ -161,18 +161,7 @@ class Home extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-12 offset-top-30">
-                                    <div className="post-video post-video-var-1 context-dark">
-                                        <div className="post-video__image"><img src="http://via.placeholder.com/1119x593" alt="" width="1119" height="593"/>
-                                        </div>
-                                        <div className="post-video__body"><a className="link-control post-video__control" data-lightbox="iframe" href="https://www.youtube.com/watch?v=PCZ2JHaPvZ4"><span className="link-control__inner"></span></a>
-                                            <div className="post-video__caption post-video__caption-small">
-                                                <h3>How to Enjoy Your Workout the Best Way</h3>
-                                                <h6>Let our fitness experts show you how it's done.</h6>
-                                            </div>
-                                        </div>
-                                    </div><a className="button button-lg button-width-220 btn-anis button-gray-1" href="#">More</a>
-                                </div>
+
                             </div>
                         </div>
                         <div className="cell-lg-3 cell-xs-12">
@@ -211,38 +200,7 @@ class Home extends Component {
                                                 </div>
                                             </div>
                                             <hr />
-                                                <div className="post-sidebar-item post-sidebar-fullWidth">
-                                                    <div className="unit unit-spacing-sm unit-xs-middle unit-horizontal unit-lg-vertical unit-xlg-horizontal">
-                                                        <div className="unit__left"><a href="single-post.html"><img src="http://via.placeholder.com/90x98" alt="" width="90" height="98"/></a></div>
-                                                        <div className="unit__body">
-                                                            <h6><a href="single-post.html">Why Purple Cabbage is Useful for Your Health</a></h6>
-                                                            <div className="group-sm-sidebar">
-                                                                <p className="post-panel"><span className="mdi mdi-sm mdi-clock"></span>
-                                                                    <time className="spacing-50" dateTime="2017-06-05">June 5, 2017</time>
-                                                                </p>
-                                                                <p className="post-panel"><span className="fl-justicons-visible6"></span><span>1356</span></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr />
-                                                    <div className="post-sidebar-item post-sidebar-fullWidth">
-                                                        <div className="unit unit-spacing-sm unit-xs-middle unit-horizontal unit-lg-vertical unit-xlg-horizontal">
-                                                            <div className="unit__left"><a href="single-post.html"><img src="http://via.placeholder.com/90x98" alt="" width="90" height="98"/></a></div>
-                                                            <div className="unit__body">
-                                                                <h6><a href="single-post.html">Preparing Your Skin for the Upcoming Summer</a></h6>
-                                                                <div className="group-sm-sidebar">
-                                                                    <p className="post-panel"><span className="mdi mdi-sm mdi-clock"></span>
-                                                                        <time className="spacing-50" dateTime="2017-05-08">May 8, 2017</time>
-                                                                    </p>
-                                                                    <p className="post-panel"><span className="fl-justicons-visible6"></span><span>6424</span></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                         </div>
-                                            </div>
-                                            <div className="cell-lg-12 cell-md-6 cell-sm-6"><img src="http://via.placeholder.com/381x238" alt="" width="381" height="238"/>
                                             </div>
                                             <div className="cell-lg-12 cell-md-6 text-left">
                                                 <p className="sidebar-category">Instagram Feed</p>
