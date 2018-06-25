@@ -1,6 +1,27 @@
 import React, { Component } from 'react';
 
 class SignUp extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstname: '',
+            lastname: '',
+            mail: '',
+            password: ''
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+    }
+
     render() {
         return(
             <section class="section-md bg-white text-center">
@@ -17,7 +38,8 @@ class SignUp extends Component {
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-email">E-mail</label>
                                     <input className="form-input"
-                                           id="login-email"
+                                           value={this.state.mail}
+                                           onChange={this.handleInputChange}
                                            type="email"
                                            name="mail"
                                            data-constraints="@Email @Required"
@@ -26,7 +48,8 @@ class SignUp extends Component {
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-email">Nume</label>
                                     <input className="form-input"
-                                           id="login-name"
+                                           value={this.state.lastname}
+                                           onChange={this.handleInputChange}
                                            type="text"
                                            name="lastname"
                                            data-constraints="@Required"
@@ -35,7 +58,8 @@ class SignUp extends Component {
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-email">Prenume</label>
                                     <input className="form-input"
-                                           id="login-name"
+                                           value={this.state.firstname}
+                                           onChange={this.handleInputChange}
                                            type="text"
                                            name="firstname"
                                            data-constraints="@Required"
@@ -44,7 +68,8 @@ class SignUp extends Component {
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-password">Password</label>
                                     <input className="form-input"
-                                           id="login-password"
+                                           value={this.state.password}
+                                           onChange={this.handleInputChange}
                                            type="password"
                                            name="password"
                                            data-constraints="@Required"
