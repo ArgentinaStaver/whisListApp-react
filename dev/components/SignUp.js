@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class SignUp extends Component {
     constructor(props) {
@@ -10,6 +11,8 @@ class SignUp extends Component {
             password: ''
         };
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.registerUser = this.registerUser.bind(this);
+        this.resetForm = this.resetForm.bind(this);
     }
 
     handleInputChange(event) {
@@ -19,6 +22,23 @@ class SignUp extends Component {
 
         this.setState({
             [name]: value
+        });
+    }
+
+    registerUser() {
+       let vm = this;
+        axios.post('http://localhost:8000/api/user', this.state)
+            .then(function (response) {
+                vm.resetForm();
+            });
+    }
+
+    resetForm() {
+        this.setState({
+            firstname: '',
+            lastname: '',
+            mail: '',
+            password: ''
         });
     }
 
@@ -75,7 +95,11 @@ class SignUp extends Component {
                                            data-constraints="@Required"
                                     />
                                 </div>
-                                <button className="button button-primary button-effect-ujarak button-block" type="submit">Creaza-ti cont</button>
+                                <button className="button button-primary button-effect-ujarak button-block"
+                                        type="button"
+                                        onClick={this.registerUser}>
+                                    Creaza-ti cont
+                                </button>
                             </form>
                         </div>
                     </div>
