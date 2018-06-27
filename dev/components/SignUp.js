@@ -44,12 +44,12 @@ class SignUp extends Component {
 
     render() {
         return(
-            <section class="section-md bg-white text-center">
-                <div class="shell">
-                    <div class="range range-sm-center range-50">
-                        <div class="cell-xs-12">
+            <section className="section-md bg-white text-center">
+                <div className="shell">
+                    <div className="range range-sm-center range-50">
+                        <div className="cell-xs-12">
                             <h3>Make a wish come true</h3>
-                            <p class="big text-width-medium">Create a dream list account</p>
+                            <p className="big text-width-medium">Create a dream list account</p>
                         </div>
                     <div className="cell-sm-9 cell-md-7 cell-lg-6">
                         <div className="inset-sm-25">
