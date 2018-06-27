@@ -1,6 +1,47 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class SignUp extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstname: '',
+            lastname: '',
+            mail: '',
+            password: ''
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.registerUser = this.registerUser.bind(this);
+        this.resetForm = this.resetForm.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+    }
+
+    registerUser() {
+       let vm = this;
+        axios.post('http://localhost:8000/api/user', this.state)
+            .then(function (response) {
+                vm.resetForm();
+            });
+    }
+
+    resetForm() {
+        this.setState({
+            firstname: '',
+            lastname: '',
+            mail: '',
+            password: ''
+        });
+    }
+
     render() {
         return(
             <section class="section-md bg-white text-center">
@@ -13,49 +54,52 @@ class SignUp extends Component {
                     <div className="cell-sm-9 cell-md-7 cell-lg-6">
                         <div className="inset-sm-25">
                             <p className="large text-gray-darker">Creaza lista visurilor tale</p>
-                            <div className="group-sm group-sm-justify">
-                                <a className="button button-facebook button-rounded button-icon button-icon-left" href="#">
-                                    <span className="icon fa fa-facebook"></span>Facebook
-                                </a>
-                                <a className="button button-twitter button-rounded button-icon button-icon-left" href="#">
-                                    <span className="icon fa fa-twitter"></span>Twitter
-                                </a>
-                                <a className="button button-google button-rounded button-icon button-icon-left" href="#">
-                                    <span className="icon fa fa-google-plus"></span>Google+
-                                </a>
-                            </div>
-                            <div className="text-decoration-lines">
-                                <span className="text-decoration-lines-content">or</span>
-                            </div>
                             <form className="rd-mailform form-label-centered">
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-email">E-mail</label>
                                     <input className="form-input"
-                                           id="login-email"
+                                           value={this.state.mail}
+                                           onChange={this.handleInputChange}
                                            type="email"
-                                           name="email"
+                                           name="mail"
                                            data-constraints="@Email @Required"
                                     />
                                 </div>
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-email">Nume</label>
                                     <input className="form-input"
-                                           id="login-name"
+                                           value={this.state.lastname}
+                                           onChange={this.handleInputChange}
                                            type="text"
-                                           name="name"
+                                           name="lastname"
                                            data-constraints="@Required"
                                     />
                                 </div>
                                 <div className="form-wrap">
+                                    <label className="form-label-outside" for="login-email">Prenume</label>
+                                    <input className="form-input"
+                                           value={this.state.firstname}
+                                           onChange={this.handleInputChange}
+                                           type="text"
+                                           name="firstname"
+                                           data-constraints="@Required"
+                                        />
+                                </div>
+                                <div className="form-wrap">
                                     <label className="form-label-outside" for="login-password">Password</label>
                                     <input className="form-input"
-                                           id="login-password"
+                                           value={this.state.password}
+                                           onChange={this.handleInputChange}
                                            type="password"
-                                           name="pass"
+                                           name="password"
                                            data-constraints="@Required"
                                     />
                                 </div>
-                                <button className="button button-primary button-effect-ujarak button-block" type="submit">Creaza-ti cont</button>
+                                <button className="button button-primary button-effect-ujarak button-block"
+                                        type="button"
+                                        onClick={this.registerUser}>
+                                    Creaza-ti cont
+                                </button>
                             </form>
                         </div>
                     </div>
