@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstname: '',
-            lastname: '',
-            mail: '',
-            password: ''
+            user: {
+                firstname: '',
+                lastname: '',
+                mail: '',
+                password: ''
+            },
+            redirect: false
         };
+
         this.handleInputChange = this.handleInputChange.bind(this);
         this.registerUser = this.registerUser.bind(this);
         this.resetForm = this.resetForm.bind(this);
@@ -20,14 +25,15 @@ class SignUp extends Component {
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
-        this.setState({
-            [name]: value
-        });
+        let state = this.state;
+        state.user[name] = value;
+
+        this.setState(state);
     }
 
     registerUser() {
        let vm = this;
-        axios.post('http://localhost:8000/api/user', this.state)
+        axios.post('http://localhost:8000/api/user', this.state.user)
             .then(function (response) {
                 vm.resetForm();
             });
@@ -35,21 +41,27 @@ class SignUp extends Component {
 
     resetForm() {
         this.setState({
-            firstname: '',
-            lastname: '',
-            mail: '',
-            password: ''
+            user: {
+                firstname: '',
+                lastname: '',
+                mail: '',
+                password: ''
+            },
+            redirect: true
         });
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to='/user' />;
+        }
         return(
-            <section class="section-md bg-white text-center">
-                <div class="shell">
-                    <div class="range range-sm-center range-50">
-                        <div class="cell-xs-12">
+            <section className="section-md bg-white text-center">
+                <div className="shell">
+                    <div className="range range-sm-center range-50">
+                        <div className="cell-xs-12">
                             <h3>Make a wish come true</h3>
-                            <p class="big text-width-medium">Create a dream list account</p>
+                            <p className="big text-width-medium">Create a dream list account</p>
                         </div>
                     <div className="cell-sm-9 cell-md-7 cell-lg-6">
                         <div className="inset-sm-25">
@@ -58,7 +70,7 @@ class SignUp extends Component {
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-email">E-mail</label>
                                     <input className="form-input"
-                                           value={this.state.mail}
+                                           value={this.state.user.mail}
                                            onChange={this.handleInputChange}
                                            type="email"
                                            name="mail"
@@ -68,7 +80,7 @@ class SignUp extends Component {
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-email">Nume</label>
                                     <input className="form-input"
-                                           value={this.state.lastname}
+                                           value={this.state.user.lastname}
                                            onChange={this.handleInputChange}
                                            type="text"
                                            name="lastname"
@@ -78,7 +90,7 @@ class SignUp extends Component {
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-email">Prenume</label>
                                     <input className="form-input"
-                                           value={this.state.firstname}
+                                           value={this.state.user.firstname}
                                            onChange={this.handleInputChange}
                                            type="text"
                                            name="firstname"
@@ -88,7 +100,7 @@ class SignUp extends Component {
                                 <div className="form-wrap">
                                     <label className="form-label-outside" for="login-password">Password</label>
                                     <input className="form-input"
-                                           value={this.state.password}
+                                           value={this.state.user.password}
                                            onChange={this.handleInputChange}
                                            type="password"
                                            name="password"

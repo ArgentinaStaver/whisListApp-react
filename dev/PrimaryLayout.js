@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import ProfilePage from './components/ProfilePage';
 
 export default class PrimaryLayout extends Component {
     render() {
@@ -14,6 +15,7 @@ export default class PrimaryLayout extends Component {
                 <Route path="/" exact component={Home} />
                 <Route path="/signUp" component={SignUp} />
                 <Route path="/login" component={Login} />
+                <Route path="/user" component={ProfilePage} />
                 <Footer />
             </div>
         );
