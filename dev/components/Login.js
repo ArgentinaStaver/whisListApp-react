@@ -1,7 +1,57 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: {
+                mail: '',
+                password: ''
+            },
+            redirect: false
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.loginUser = this.loginUser.bind(this);
+        this.resetForm = this.resetForm.bind(this);
+    }
+
+    handleInputChange(event) {
+        console.log(event);
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        let state = this.state;
+        state.user[name] = value;
+
+        this.setState(state);
+    }
+
+    loginUser() {
+        let vm = this;
+        axios.post('http://localhost:8000/api/login', this.state.user)
+            .then(function (response) {
+                vm.resetForm();
+            });
+    }
+
+    resetForm() {
+        this.setState({
+            user: {
+                mail: '',
+                password: ''
+            },
+            redirect: true
+        });
+    }
+
     render() {
+        if (this.state.redirect) {
+            return <Redirect to='/user' />;
+        }
         return(
             <section class="section-md bg-white text-center">
                 <div class="shell">
@@ -31,22 +81,28 @@ class Login extends Component {
                                     <div className="form-wrap">
                                         <label className="form-label-outside" for="login-email">E-mail</label>
                                         <input className="form-input"
-                                               id="login-email"
-                                               type="email"
-                                               name="email"
-                                               data-constraints="@Email @Required"
-                                            />
+                                           value={this.state.user.mail}
+                                           onChange={this.handleInputChange}
+                                           type="email"
+                                           name="mail"
+                                           data-constraints="@Email @Required"
+                                        />
                                     </div>
                                     <div className="form-wrap">
                                         <label className="form-label-outside" for="login-password">Password</label>
                                         <input className="form-input"
-                                               id="login-password"
-                                               type="password"
-                                               name="pass"
-                                               data-constraints="@Required"
-                                            />
+                                           value={this.state.user.password}
+                                           onChange={this.handleInputChange}
+                                           type="password"
+                                           name="password"
+                                           data-constraints="@Required"
+                                        />
                                     </div>
-                                    <button className="button button-primary button-effect-ujarak button-block" type="submit">Intra in cont</button>
+                                    <button className="button button-primary button-effect-ujarak button-block"
+                                        type="submit"
+                                        onClick={this.loginUser}>
+                                        Intra in cont
+                                    </button>
                                 </form>
                             </div>
                         </div>
