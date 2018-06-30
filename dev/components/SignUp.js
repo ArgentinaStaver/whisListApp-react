@@ -53,7 +53,7 @@ class SignUp extends Component {
 
     render() {
         if (this.state.redirect) {
-            return <Redirect to='/user' />;
+            return <Redirect to='/login' />;
         }
         return(
             <section className="section-md bg-white text-center">
