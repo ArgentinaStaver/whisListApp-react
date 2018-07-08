@@ -6,6 +6,8 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import ProfilePage from './components/ProfilePage';
+import AddEvents from './components/events/AddEvents';
+import Events from './components/events/Events';
 
 export default class PrimaryLayout extends Component {
     render() {
@@ -16,6 +18,8 @@ export default class PrimaryLayout extends Component {
                 <Route path="/signUp" component={SignUp} />
                 <Route path="/login" component={Login} />
                 <Route path="/user" component={ProfilePage} />
+                <Route path="/addEvent" component={AddEvents} />
+                <Route path="/event" component={Events} />
                 <Footer />
             </div>
         );
