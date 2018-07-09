@@ -37,7 +37,11 @@ class Events extends Component {
                                         <div className="cell-sm-12 cell-xs-10">
                                             <div className="box-product-horizontal">
                                                 <div className="unit unit-spacing-0 unit-sm-horizontal">
-                                                    <div className="unit__left"><a href="single-product.html"><img src="http://via.placeholder.com/301x306" alt="" width="301" height="306"/></a></div>
+                                                    <div className="unit__left">
+                                                        <a href="single-product.html">
+                                                            <img src="../../../images/eventpict.jpg" alt="" width="301" height="306"/>
+                                                        </a>
+                                                    </div>
                                                     <div className="unit__body">
                                                         <div className="box-product-content">
                                                             <div className="box-product-content-wrap">

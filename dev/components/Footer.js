@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Menu from './Menu';
 
 class Footer extends Component {
     render() {
@@ -14,25 +15,10 @@ class Footer extends Component {
                             <div className="cell-md-3 cell-sm-5 cell-xs-7">
                                 <h4>Links</h4>
                                 <ul className="list list-size-small list-bold list-uppercase list-white list-two-columns">
-                                    <li><a href="about-us.html">About</a></li>
-                                    <li><a href="health.html">Health</a></li>
-                                    <li><a href="food.html">Food</a></li>
-                                    <li><a href="love.html">Love</a></li>
-                                    <li><a href="fitness.html">Fitness</a></li>
-                                    <li><a href="beauty.html">Beauty</a></li>
+                                    <Menu />
                                 </ul>
                             </div>
-                            <div className="cell-md-5 cell-xs-10">
-                                <h4>Join Our Newsletter</h4>
-                                <form className="rd-mailform rd-mailform-lg form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                                    <div className="form-wrap">
-                                        <input className="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required" />
-                                            <label className="form-label form-label-dark" for="subscribe-email">E-mail</label>
-                                        </div>
-                                        <button className="button button-lg button-effect-ujarak button-secondary-dark" type="submit">Subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
+                        </div>
                         </div>
                         <div className="page-footer-inner-bottom text-center">
                             <div className="range range-20 range-sm-0 range-center range-middle">

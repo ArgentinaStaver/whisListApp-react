@@ -62,21 +62,6 @@ class Login extends Component {
                         </div>
                         <div className="cell-sm-9 cell-md-7 cell-lg-6">
                             <div className="inset-sm-25">
-                                <p className="large text-gray-darker">my dream list</p>
-                                <div className="group-sm group-sm-justify">
-                                    <a className="button button-facebook button-rounded button-icon button-icon-left" href="#">
-                                        <span className="icon fa fa-facebook"></span>Facebook
-                                    </a>
-                                    <a className="button button-twitter button-rounded button-icon button-icon-left" href="#">
-                                        <span className="icon fa fa-twitter"></span>Twitter
-                                    </a>
-                                    <a className="button button-google button-rounded button-icon button-icon-left" href="#">
-                                        <span className="icon fa fa-google-plus"></span>Google+
-                                    </a>
-                                </div>
-                                <div className="text-decoration-lines">
-                                    <span className="text-decoration-lines-content">or</span>
-                                </div>
                                 <form className="rd-mailform form-label-centered">
                                     <div className="form-wrap">
                                         <label className="form-label-outside" for="login-email">E-mail</label>

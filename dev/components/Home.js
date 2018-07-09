@@ -9,60 +9,6 @@ class Home extends Component {
                         <div className="cell-lg-9 cell-xs-12 cell-lg-container isotope-wrap">
                             <div className="row isotope-wrap">
                                 <div className="col-lg-12">
-                                    <div className="panel-top-switch-filters">
-                                        <div className="isotope-filters isotope-filters-horizontal tabs-custom tabs-horizontal tabs-corporate">
-                                            <ul className="nav nav-custom nav-tabs">
-                                                <li><a className="active" data-isotope-filter="*" data-isotope-group="gallery" href="#">All</a></li>
-                                                <li><a data-isotope-filter="Type 1" data-isotope-group="gallery" href="#">Hair</a></li>
-                                                <li><a data-isotope-filter="Type 2" data-isotope-group="gallery" href="#">Makeup</a></li>
-                                                <li><a data-isotope-filter="Type 3" data-isotope-group="gallery" href="#">Nails</a></li>
-                                                <li><a data-isotope-filter="Type 4" data-isotope-group="gallery" href="#">fashion</a></li>
-                                            </ul>
-                                        </div>
-                                        <div className="switch-box switch-box-inset"><span className="switch-text">View:</span><span className="switch-item"><a className="switch-list" href="beauty-list.html">
-                                            <svg x="0px" y="0px" width="14px" height="13px" viewBox="0 0 14 13" enableBackground="new 0 0 14 13">
-                                                <g>
-                                                    <rect fill="#ccc" width="3" height="3"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect y="5" fill="#ccc" width="3" height="3"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect y="10" fill="#ccc" width="3" height="3"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect x="5" y="1" fill="#ccc" width="9" height="1"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect x="5" y="11" fill="#ccc" width="9" height="1"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect x="5" y="6" fill="#ccc" width="9" height="1"></rect>
-                                                </g>
-                                            </svg></a><a className="active switch-column" href="beauty.html">
-                                            <svg x="0px" y="0px" width="16px" height="10px" viewBox="0 0 16 10" enableBackground="new 0 0 16 10">
-                                                <g>
-                                                    <rect x="0" fill="#ccc" width="4" height="4"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect x="6" fill="#ccc" width="4" height="4"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect x="12" fill="#ccc" width="4" height="4"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect x="0" y="6" fill="#ccc" width="4" height="4"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect x="6" y="6" fill="#ccc" width="4" height="4"></rect>
-                                                </g>
-                                                <g>
-                                                    <rect x="12" y="6" fill="#ccc" width="4" height="4"></rect>
-                                                </g>
-                                            </svg></a></span></div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-12">
                                     <div className="row isotope" data-isotope-layout="fitRows" data-isotope-group="gallery">
                                         <div className="col-md-4 col-sm-12 col-xs-12 isotope-item" data-filter="Type 2">
                                             <div className="post post-var-1 post-custom-1">
@@ -161,27 +107,10 @@ class Home extends Component {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div className="cell-lg-3 cell-xs-12">
                             <div className="range range-50 range-center post-sidebar">
-                                <div className="cell-lg-12 cell-sm-6 text-center">
-                                    <div className="post-sidebar-form sidebar-border"><span className="post-top">free offer</span>
-                                        <div className="post-sidebar-form-content">
-                                            <h4>5 Easy Ways for Women to Get Perfect Skin</h4>
-                                            <p>Enter your e-mail below and get this skincare e-book free!</p>
-                                        </div>
-                                        <form className="rd-mailform rd-mailform-lg" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                                            <div className="form-wrap">
-                                                <input className="form-input form-input-lg" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required" />
-                                                    <label className="form-label" for="subscribe-email">E-mail</label>
-                                                </div>
-                                                <button className="button button-lg btn-anis button-gray-1" type="submit">Subscribe</button>
-                                            </form>
-                                            <p>100% Privacy. We will never spam you!</p>
-                                        </div>
-                                    </div>
                                     <div className="cell-lg-12 cell-sm-6 text-left">
                                         <p className="sidebar-category">Popular Posts</p>
                                         <div className="sidebar-border">
@@ -200,7 +129,7 @@ class Home extends Component {
                                                 </div>
                                             </div>
                                             <hr />
-                                        </div>
+                                        </div>A
                                             </div>
                                             <div className="cell-lg-12 cell-md-6 text-left">
                                                 <p className="sidebar-category">Instagram Feed</p>
