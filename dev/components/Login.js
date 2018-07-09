@@ -19,7 +19,6 @@ class Login extends Component {
     }
 
     handleInputChange(event) {
-        console.log(event);
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -31,11 +30,22 @@ class Login extends Component {
     }
 
     loginUser() {
+        localStorage.clear();
+        axios.defaults.headers.common['X-UserId'] = null;
+
         let vm = this;
         axios.post('http://localhost:8000/api/login', this.state.user)
             .then(function (response) {
+                vm.setToken(response.data);
                 vm.resetForm();
             });
+    }
+
+    setToken(data) {
+        localStorage.setItem('isLoggedIn', true);
+        localStorage.setItem('user', JSON.stringify(data.user));
+
+        axios.defaults.headers.common['X-UserId'] = JSON.stringify(data.user.id);
     }
 
     resetForm() {
