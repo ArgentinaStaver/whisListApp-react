@@ -50,7 +50,7 @@ class Login extends Component {
 
     render() {
         if (this.state.redirect) {
-            return <Redirect to='/user' />;
+            return <Redirect to='/event' />;
         }
         return(
             <section className="section-md bg-white text-center">
@@ -99,7 +99,7 @@ class Login extends Component {
                                         />
                                     </div>
                                     <button className="button button-primary button-effect-ujarak button-block"
-                                        type="submit"
+                                        type="button"
                                         onClick={this.loginUser}>
                                         Intra in cont
                                     </button>
