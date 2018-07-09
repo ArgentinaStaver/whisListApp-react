@@ -50,7 +50,7 @@ class Login extends Component {
 
     render() {
         if (this.state.redirect) {
-            return <Redirect to='/user' />;
+            return <Redirect to='/event' />;
         }
         return(
             <section className="section-md bg-white text-center">

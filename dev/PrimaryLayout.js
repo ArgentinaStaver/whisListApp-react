@@ -8,6 +8,7 @@ import Login from './components/Login';
 import ProfilePage from './components/ProfilePage';
 import AddEvents from './components/events/AddEvents';
 import Events from './components/events/Events';
+import EditEvent from './components/events/EditEvent';
 
 export default class PrimaryLayout extends Component {
     render() {
@@ -20,6 +21,7 @@ export default class PrimaryLayout extends Component {
                 <Route path="/user" component={ProfilePage} />
                 <Route path="/addEvent" component={AddEvents} />
                 <Route path="/event" component={Events} />
+                <Route path="/editEvent/:id" component={EditEvent} />
                 <Footer />
             </div>
         );
