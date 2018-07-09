@@ -9,12 +9,25 @@ import ProfilePage from './components/ProfilePage';
 import AddEvents from './components/events/AddEvents';
 import Events from './components/events/Events';
 import EditEvent from './components/events/EditEvent';
+import axios from 'axios';
 
 export default class PrimaryLayout extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loggedIn: localStorage.getItem('isLoggedIn')
+        };
+        console.log(111);
+    }
+
     render() {
+        let user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            axios.defaults.headers.common['X-UserId'] = user.id;
+        }
         return (
             <div className="text-center text-sm-left page">
-                <Header />
+                <Header isLoggedIn={this.state.loggedIn} />
                 <Route path="/" exact component={Home} />
                 <Route path="/signUp" component={SignUp} />
                 <Route path="/login" component={Login} />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SocialMedia from './SocialMedia';
-import Menu from './Menu';
+import SiteMenu from './Menu';
 
 class Header extends Component {
     render() {
@@ -41,7 +41,7 @@ class Header extends Component {
                         </div>
                     </div>
                     <div className="rd-navbar-aside-right">
-                        <Menu />
+                        <SiteMenu logged={this.props.isLoggedIn}/>
                     </div>
                 </nav>
             </div>
