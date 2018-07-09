@@ -99,7 +99,7 @@ class Login extends Component {
                                         />
                                     </div>
                                     <button className="button button-primary button-effect-ujarak button-block"
-                                        type="submit"
+                                        type="button"
                                         onClick={this.loginUser}>
                                         Intra in cont
                                     </button>

@@ -102,12 +102,15 @@ class EditEvent extends Component {
                             </div>
                         </div>
                         <div className="cell-md-4 cell-xs-8">
-                            <Persons />
+                            {
+                                this.state.event.id !== '' &&
+                                <Persons eventId={this.state.event.id}/>
+                            }
                         </div>
                         <div className="cell-md-8 cell-xs-8">
                             {
                                 this.state.event.id !== '' &&
-                                <Gifts eventId={this.state.event.id} />
+                                <Gifts eventId={this.state.event.id}/>
                             }
 
                         </div>
