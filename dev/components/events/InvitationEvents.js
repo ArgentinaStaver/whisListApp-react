@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class Events extends Component {
+class InvitationEvents extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,9 +13,9 @@ class Events extends Component {
 
     componentDidMount() {
         let vm = this;
-        axios.get('http://localhost:8000/api/event')
+        axios.get('http://localhost:8000/api/user/events')
             .then(function (response) {
-                vm.setEvents(response.data.data);
+                vm.setEvents(response.data);
             });
     }
 
@@ -30,7 +30,7 @@ class Events extends Component {
             <section class="section-md bg-white">
                 <div class="shell shell-custom">
                     <div className="group-xl">
-                        <div className="button button-circle button-primary button-gray-1"><Link to="/addEvent">Adauga eveniment</Link></div>
+                        <h4>Evenimente la care particip</h4>
                     </div>
                     <div class="range range-50 range-lg-justify">
                         <div class="cell-md-9 cell-xs-12 cell-lg-container-3">
@@ -40,11 +40,7 @@ class Events extends Component {
                                         <div className="cell-sm-12 cell-xs-10">
                                             <div className="box-product-horizontal">
                                                 <div className="unit unit-spacing-0 unit-sm-horizontal">
-                                                    <div className="unit__left">
-                                                        <a href="single-product.html">
-                                                            <img src="../../../images/eventpict.jpg" alt="" width="301" height="306"/>
-                                                        </a>
-                                                    </div>
+                                                    <div className="unit__left"><a href="single-product.html"><img src="http://via.placeholder.com/301x306" alt="" width="301" height="306"/></a></div>
                                                     <div className="unit__body">
                                                         <div className="box-product-content">
                                                             <div className="box-product-content-wrap">
@@ -53,7 +49,7 @@ class Events extends Component {
                                                                 <p>{event.description}</p>
                                                                 <button type="button" className="button button-effect-ujarak button-gray-1" href="cart-page.html">
                                                                     <Link to={`/editEvent/${event.id}`}>
-                                                                        Editeaza
+                                                                        Vezi detalii
                                                                     </Link>
                                                                 </button>
                                                             </div>
@@ -73,4 +69,4 @@ class Events extends Component {
     }
 }
 
-export default Events;
+export default InvitationEvents;
