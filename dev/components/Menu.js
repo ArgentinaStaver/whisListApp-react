@@ -16,7 +16,10 @@ class SiteMenu extends Component {
                             <Link to="/event">Evenimentele mele</Link>
                         </li>
                         <li>
-                            <Link to="/event">Invitatii</Link>
+                            <Link to="/invitations">Invitatii</Link>
+                        </li>
+                        <li>
+                            <Link to="/logout">Logout</Link>
                         </li>
                     </ul>
                 }
