@@ -95,7 +95,7 @@ class AddEvents extends Component {
                                     </div>
                                     <button
                                         className="button button-primary button-effect-ujarak button-block"
-                                        type="submit"
+                                        type="button"
                                         onClick={this.registerEvent}>
                                         Adauga evenimentul
                                     </button>

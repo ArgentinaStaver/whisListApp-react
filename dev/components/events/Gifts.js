@@ -84,17 +84,17 @@ class Gifts extends Component {
             { this.state.gifts.map((gift) =>
                 <div className="cell-md-4 cell-sm-6 cell-xs-10">
                     <div className="box-product">
-                        <a href="{gift.link}" target="_blank">
-                            <img src="../../../images/cadou1.jpg" alt="" width="240" height="235"/>
+                        <a href={gift.link} target="_blank">
+                            <img src="../../../images/cadou2.jpg" alt="" width="240" height="235"/>
                         </a>
                         <h5>
-                            <a>
+                            <a href={gift.link}>
                                 {gift.title}
                             </a>
                         </h5>
                         <span className="price">{gift.description}</span>
                         <div className="box-product-details">
-                            <a className="mdi"><i className={gift.reserved ? "fa fa-checked" : "fa fa-times"}></i></a>
+                            <a className="mdi"><i className={gift.reserved ? "fa fa-check" : "fa fa-times"}></i></a>
                         </div>
                     </div>
                 </div>

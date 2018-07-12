@@ -40,15 +40,19 @@ class InvitationEvents extends Component {
                                         <div className="cell-sm-12 cell-xs-10">
                                             <div className="box-product-horizontal">
                                                 <div className="unit unit-spacing-0 unit-sm-horizontal">
-                                                    <div className="unit__left"><a href="single-product.html"><img src="http://via.placeholder.com/301x306" alt="" width="301" height="306"/></a></div>
+                                                    <div className="unit__left">
+                                                        <a href="single-product.html">
+                                                            <img src="../../../images/eventpict.jpg" alt="" width="301" height="306"/>
+                                                        </a>
+                                                    </div>
                                                     <div className="unit__body">
                                                         <div className="box-product-content">
                                                             <div className="box-product-content-wrap">
                                                                 <h4><a href="single-product.html">{event.title}</a></h4>
-                                                                <div className="box-product-price"><span className="price">{event.eventDate.date}</span></div>
+                                                                <div className="box-product-price"><span className="price">{event.eventDate}</span></div>
                                                                 <p>{event.description}</p>
                                                                 <button type="button" className="button button-effect-ujarak button-gray-1" href="cart-page.html">
-                                                                    <Link to={`/editEvent/${event.id}`}>
+                                                                    <Link to={`/invitationPage/${event.id}`}>
                                                                         Vezi detalii
                                                                     </Link>
                                                                 </button>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SocialMedia from './SocialMedia';
 import SiteMenu from './Menu';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
@@ -25,23 +26,18 @@ class Header extends Component {
                         <SocialMedia />
                         <div className="rd-navbar-panel">
                             <button className="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                            <div className="rd-navbar-brand"><a className="brand-name" href="http://wesbos.com/react-jsx-comments/"><img src="images/logo-dark-165x53.png" alt="" width="165" height="53"/></a></div>
+                            <div className="rd-navbar-brand">
+                                <Link to="/"> <img src="images/logo-dark-165x53.png" alt="" width="165" height="53"/></Link>
+                            </div>
                         </div>
                         <div className="rd-navbar-aside-social">
-                            <div className="rd-navbar-search"><a className="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search" href="http://wesbos.com/react-jsx-comments/"><span></span></a>
-                                <form className="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
-                                    <div className="form-wrap">
-                                        <label className="form-label form-label" htmlFor="rd-navbar-search-form-input">Search...</label>
-                                        <input className="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autoComplete="off" />
-                                        <div className="rd-search-results-live" id="rd-search-results-live"></div>
-                                    </div>
-                                    <button className="rd-search-form-submit fl-budicons-launch-search81"></button>
-                                </form>
+                            <div className="rd-navbar-search">
+                                <h5>{this.props.user && this.props.user.full_name}</h5>
                             </div>
                         </div>
                     </div>
                     <div className="rd-navbar-aside-right">
-                        <SiteMenu logged={this.props.isLoggedIn}/>
+                        <SiteMenu logged={this.props.user}/>
                     </div>
                 </nav>
             </div>

@@ -11,7 +11,9 @@ import AddEvents from './components/events/AddEvents';
 import Events from './components/events/Events';
 import InvitationEvents from './components/events/InvitationEvents';
 import EditEvent from './components/events/EditEvent';
+import InvitationEventPage from './components/events/InvitationEventPage';
 import axios from 'axios';
+
 
 export default class PrimaryLayout extends Component {
     constructor(props) {
@@ -19,7 +21,6 @@ export default class PrimaryLayout extends Component {
         this.state = {
             loggedIn: localStorage.getItem('isLoggedIn')
         };
-        console.log(111);
     }
 
     render() {
@@ -27,9 +28,10 @@ export default class PrimaryLayout extends Component {
         if (user) {
             axios.defaults.headers.common['X-UserId'] = user.id;
         }
+        console.log(axios.defaults.headers);
         return (
             <div className="text-center text-sm-left page">
-                <Header isLoggedIn={this.state.loggedIn} />
+                <Header user={user} isLoggedIn={this.state.loggedIn} />
                 <Route path="/" exact component={Home} />
                 <Route path="/signUp" component={SignUp} />
                 <Route path="/login" component={Login} />
@@ -38,7 +40,10 @@ export default class PrimaryLayout extends Component {
                 <Route path="/addEvent" component={AddEvents} />
                 <Route path="/event" component={Events} />
                 <Route path="/invitations" component={InvitationEvents} />
+
                 <Route path="/editEvent/:id" component={EditEvent} />
+
+                <Route path="/invitationPage/:id" component={InvitationEventPage} />
                 <Footer />
             </div>
         );

@@ -36,7 +36,8 @@ class Login extends Component {
         let vm = this;
         axios.post('http://localhost:8000/api/login', this.state.user)
             .then(function (response) {
-                vm.setToken(response.data);
+                if(response.data)
+                   vm.setToken(response.data);
                 vm.resetForm();
             });
     }

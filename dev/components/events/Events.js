@@ -49,7 +49,7 @@ class Events extends Component {
                                                         <div className="box-product-content">
                                                             <div className="box-product-content-wrap">
                                                                 <h4><a href="single-product.html">{event.title}</a></h4>
-                                                                <div className="box-product-price"><span className="price">{event.eventDate.date}</span></div>
+                                                                <div className="box-product-price"><span className="price">{event.eventDate}</span></div>
                                                                 <p>{event.description}</p>
                                                                 <button type="button" className="button button-effect-ujarak button-gray-1" href="cart-page.html">
                                                                     <Link to={`/editEvent/${event.id}`}>

@@ -62,7 +62,7 @@ class EditEvent extends Component {
                             <div className="box-product">
                                 <div className="unit unit-spacing-0 unit-sm-horizontal box-product-content">
                                     <div className="cell-md-4">
-                                        <a href="single-product.html"><img src="http://via.placeholder.com/301x306" alt="" width="301" height="306"/></a>
+                                        <a href="single-product.html"><img src="../../../images/eventpict.jpg" alt="" width="301" height="406"/></a>
                                     </div>
                                     <div className="cell-md-8 width70pr">
                                         <form className="form-label-left">
